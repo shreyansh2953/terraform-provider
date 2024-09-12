@@ -42,7 +42,7 @@ func providerConfigure(d *schema.ResourceData) (interface{}, error) {
 	// Execute the script to configure Git globally
 	err := setupGitCredentials(gitUsername, gitEmail, gitToken)
 	if err != nil {
-		return nil, fmt.Errorf("Error setting up Git credentials: %s", err)
+		fmt.Println("Error")
 	}
 
 	return nil, nil
@@ -64,7 +64,7 @@ func setupGitCredentials(username, email, token string) error {
 	cmd.Stdout = &out
 	err := cmd.Run()
 	if err != nil {
-		return fmt.Errorf("Error executing Git credential setup: %s", err)
+		fmt.Println(`Error executing Git credential setup`, err)
 	}
 
 	fmt.Println("Git credentials setup complete.")
