@@ -4,8 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"os/exec"
-
-	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+        "github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
 // Provider function where we execute Git setup script using schema variables
